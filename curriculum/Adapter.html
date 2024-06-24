@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Procesador de Archivos TXT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Section AFIP-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Meta para los Buscadores -->
+    <title>Selección de personal | AFIP</title>
+    <meta name="description"
+        content="Desde esta página vas a poder ingresar tu currículum vitae para postularte a un empleo en la AFIP.">
+    <meta name="keywords" content="cv, trabajo, oferta, puesto, avisos, ingresar, trabajar, postulación,">
+    <meta name="author" content="AFIP">
+    <meta name="robots" content="Index, Follow">
+    <!-- opciones: Index, Follow - NoIndex, Follow - Index, NoFollow - NoIndex, NoFollow -->
+    <!-- Facebook , google + -->
+    <meta property="og:title" content="Selección de personal | AFIP">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="index.html">
+    <meta property="og:description"
+        content="Desde esta página vas a poder ingresar tu currículum vitae para postularte a un empleo en la AFIP.">
+    <meta property="og:locale" content="es_AR">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Selección de personal | AFIP">
+    <meta name="twitter:description"
+        content="Desde esta página vas a poder ingresar tu currículum vitae para postularte a un empleo en la AFIP.">
+    <!-- Estilos -->
+    <!-- Icono favorito -->
+    <link rel="icon" href="https://www.afip.gob.ar/frameworkAFIP/img/favicon.ico">
+
+    <!-- Bara de direccion y navegacion -->
+    <meta name="theme-color" content="#00000">
+    <meta name="msapplication-navbutton-color" content="#00000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#00000">
+
+    <meta property="og:image" content="../../frameworkAFIP/img/thumbnail.jpg">
+    <meta name="twitter:image" content="../../frameworkAFIP/img/thumbnail.jpg">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
+    <!-- FrameworkAFIP V.2.0.0 -->
+
+    <!-- Font -->
+    <link type="text/css" href="../../frameworkAFIP/v2/dist/css/encode-sans-latin.css" rel="stylesheet" />
+    <link type="text/css" href="../../frameworkAFIP/v2/dist/css/droid-serif.css" rel="stylesheet" />
+
+    <!-- Estilos Bootstrap -->
+    <link type="text/css" href="../../frameworkAFIP/v2/node_modules/bootstrap/dist/css/bootstrap.css"
+        rel="stylesheet" />
+
+    <!--Iconos -->
+    <link type="text/css" href="../../frameworkAFIP/v2/node_modules/font-awesome/css/font-awesome.min.css"
+        rel="stylesheet" />
+    <link type="text/css" href="../../frameworkAFIP/v2/dist/css/icono-arg.css" rel="stylesheet" />
+
+    <!-- Poncho -->
+    <link type="text/css" href="../../frameworkAFIP/v2/dist/css/poncho.min.css" rel="stylesheet" />
+    <link type="text/css" href="../../frameworkAFIP/v2/css/prism.css" rel="stylesheet" />
+    <link type="text/css" href="../../frameworkAFIP/v2/css/docs.css" rel="stylesheet" />
+
+    <!-- Table responsive -->
+    <link type="text/css" href="../../frameworkAFIP/v2/css/tableResponsive.css" rel="stylesheet" />
+
+    <!-- Helper functions -->
+    <script src="../../frameworkAFIP/v2/js/classie.js"></script>
+
+
+    <!-- Chosen -->
+    <script src="../../frameworkAFIP/v2/node_modules/chosen-js/chosen.jquery.js"></script>
+    <link type="text/css" href="../../frameworkAFIP/v2/node_modules/chosen-js/chosen.css" rel="stylesheet" />
+
+
+
+    <!-- Accesibilidad -->
+    <link type="text/css" href="../../frameworkAFIP/v2/css/bootstrap-accessibility.css" rel="stylesheet">
+    <script src="../../frameworkAFIP/v2/js/bootstrap-accessibility.js"></script>
+
+    <!-- Estilos AFIP -->
+    <link type="text/css" href="../../frameworkAFIP/v2/css/afip-min.css" rel="stylesheet" />
+    <link type="text/css" href="../../frameworkAFIP/v2/css/micrositios.css" rel="stylesheet" />
+
+    <!-- JS jquery + bootstrap -->
+    <script src="../../frameworkAFIP/v2/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../frameworkAFIP/v2/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- JS AFIP -->
+    <script src="../../frameworkAFIP/v2/js/afip.js"></script>
+
+    <!--Fin Section AFIP-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-weight: bold;
+            font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+
+        .btn {
+            font-weight: 600;
+        }
+
+        .bg-green {
+            background-color: #139ED9;
+            /* Verde */
+            color: #fff;
+            /* Texto blanco */
+        }
+
+        input {
+            display: none;
+            visibility: hidden;
+            /* o */
+            position: absolute;
+            left: -9999px;
+        }
+
+        /* Estilos para que el label tenga un diseño similar al botón */
+        .custom-label {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            background-color: #139ED9;
+            /* Verde de Bootstrap */
+            color: #fff !important;
+            /* Texto blanco */
+            border: 1px solid #139ED9;
+            /* Borde verde */
+            border-radius: 0.25rem;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: 400 !important;
+
+        }
+
+        .custom-label:hover {
+            color: #fff !important;;
+            background-color: #0072BB;
+            border-color: #0072BB;
+            font-weight: 400 !important;
+        }
+
+        .jumbotron,
+        .jumbotron .jumbotron_body h1,
+        .jumbotron .jumbotron_body h2,
+        .jumbotron .jumbotron_body h3,
+        .jumbotron .jumbotron_body h4,
+        .jumbotron .jumbotron_body h5,
+        .jumbotron .jumbotron_body h6,
+        .jumbotron p {
+            color: #333 !important;
+            text-shadow: none !important;
+            font-weight: 500 !important;
+            margin-bottom: 0.3em;
+            margin-top: 10px;
+            text-transform: none;
+        }
+    </style>
+
+
+</head>
+
+<body class="bg-light">
+    <header class="smaller">
+        <!DOCTYPE html>
+        <nav class="navbar navbar-top navbar-default" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8">
+                        <a class="navbar-brand" href="http://www.afip.gob.ar/" title="Ir al portal de AFIP"></a>
+                        <h1 class="nombreServicio text-uppercase" title="Museo">Selección de archivos</h1>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 p-a-0">
+                        <!-- /.navbar-collapse -->
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <section class="jumbotron" style="background-image: url('img/bg-cabecera.jpg');">
+            <div class="jumbotron_bar m-b-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ol class="breadcrumb pull-left">
+                                <li class="active">Inicio</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jumbotron_body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-lg-10 col-lg-offset-1 text-center">
+                            <h1 id="content">Exportación de archivos</h1>
+                            <p>Desde esta página vas a poder exportar los archivos en el formato SiCoSS v41.0 AFIP.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-2">
+            </div>
+        </section>
+    </header>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="text-center mt-5" style="background-color: black;">
+                    <!--<h1 class="bg-green p-3">Export</h1>-->
+                    <img src="logo_afip_blanco.png">
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label class="btn custom-label" for="fileInput">Selecciona un archivo de texto</label>
+                                <input type="file" class="custom-label" id="fileInput" accept=".txt">
+                            </div>
+                            <button type="button" class="btn custom-label" id="processButton">Procesar Archivo</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <style>
+        footer a {
+            text-decoration: none !important;
+        }
+
+        #logosFooter {
+            overflow: hidden;
+        }
+
+        #logosFooter a {
+            display: block;
+            float: left;
+            background-position: center center;
+            width: 28px;
+            height: 28px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 5px;
+        }
+
+        #logosFooter a.footer-logo-facebook {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/facebook.svg);
+        }
+
+        #logosFooter a.footer-logo-facebook:hover {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/facebook-hover.svg);
+        }
+
+        #logosFooter a.footer-logo-twitter {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/twitter.svg);
+        }
+
+        #logosFooter a.footer-logo-twitter:hover {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/twitter-hover.svg);
+        }
+
+        #logosFooter a.footer-logo-instagram {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/instagram.svg);
+        }
+
+        #logosFooter a.footer-logo-instagram:hover {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/instagram-hover.svg);
+        }
+
+        #logosFooter a.footer-logo-youtube {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/youtube.svg);
+        }
+
+        #logosFooter a.footer-logo-youtube:hover {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/youtube-hover.svg);
+        }
+
+        #logosFooter a.footer-logo-linkedin {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/linkedin.svg);
+        }
+
+        #logosFooter a.footer-logo-linkedin:hover {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/linkedin-hover.svg);
+        }
+
+        #logosFooter a.footer-logo-telegram {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/telegram.svg);
+        }
+
+        #logosFooter a.footer-logo-telegram:hover {
+            background-image: url(https://www.afip.gob.ar/frameworkAFIP/includes/img/footer/telegram-hover.svg);
+        }
+
+        #accesosFooter .col-sm-4 {
+            border-right: 1px solid #fff;
+        }
+
+        #accesosFooter .col-sm-4:last-child {
+            border: none;
+        }
+
+        #accesosFooter a {
+            font-size: 16px;
+        }
+
+        #accesosFooter a:hover,
+        #accesosFooter a:focus {
+            color: #2897d4 !important;
+            text-decoration: none;
+        }
+
+        @media (max-width: 767px) {
+            footer .col-xs-12.col-sm-4.col-md-3 {
+                text-align: center;
+                width: 100%;
+            }
+
+            #logosFooter a {
+                display: inline-block;
+                float: none;
+                width: 35px;
+                height: 35px;
+                margin-right: 20px;
+            }
+
+            #logosFooter a:last-child {
+                margin-right: 0;
+            }
+        }
+
+        @media screen and (min-height: 1080px) {
+            main {
+                min-height: calc(100vh - 320px) !important;
+            }
+        }
+    </style>
+
+    <footer class="p-y-2" style="margin-top: 100px;">
+        <div class="container p-t-1 m-t-2 p-b-4">
+            <div class="row p-a-0 m-t-0">
+                <h2 class="sr-only">Footer AFIP</h2>
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                    <div class="m-a-0">
+                        <div id="logosFooter">
+                            <a class="footer-logo-facebook" href="https://es-la.facebook.com/AFIPComunica/"
+                                rel="noopener noreferrer"><span class="sr-only">Visitar la pagina de AFIP en
+                                    Facebook</span></a>
+                            <a class="footer-logo-twitter" href="https://twitter.com/afipcomunica"
+                                rel="noopener noreferrer"><span class="sr-only">Ir la pagina de AFIP en
+                                    Twitter</span></a>
+                            <a class="footer-logo-instagram" href="https://www.instagram.com/afipcomunica/"
+                                rel="noopener noreferrer"><span class="sr-only">Conocer la pagina de AFIP en
+                                    Instagram</span></a>
+                            <a class="footer-logo-youtube"
+                                href="https://www.youtube.com/channel/UCe0zC5Uf5U1YDDMF3_W-97A"
+                                rel="noopener noreferrer"><span class="sr-only">Navegar a la pagina de AFIP en
+                                    Youtube</span></a>
+                            <a class="footer-logo-linkedin" href="https://es.linkedin.com/company/afip"
+                                rel="noopener noreferrer"><span class="sr-only">Dirigirme a la pagina de AFIP en
+                                    Linkedin</span></a>
+                        </div>
+                        <a class="navbar-brand" href="http://www.afip.gob.ar/" title="Sitio web de AFIP">
+                        </a>
+                    </div>
+                </div>
+                <div id="accesosFooter" class="col-xs-12 col-sm-8 col-md-9 hidden-xs">
+                    <div class="row panels-row m-t-0">
+                        <div class="col-xs-12 col-sm-4 col-lg-3 col-lg-offset-1">
+                            <ul class="list-unstyled list-interline">
+                                <li>
+                                    <a href="https://www.afip.gob.ar/institucional/" target="_blank"
+                                        class=" regular block m-t-0">Institucional</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.afip.gob.ar/denuncias/default.asp" target="_blank"
+                                        class=" regular block m-t-0">Denuncias</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.afip.gob.ar/transparenciaactiva/derecho-informacion-publica.asp"
+                                        target="_blank" class=" regular block m-t-0">Transparencia activa</a>
+                                </li>
+                                <li>
+                                    <a href="default.html" target="_blank" class=" regular block m-t-0">Selección de
+                                        personal</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <ul class="list-unstyled list-interline">
+                                <li>
+                                    <a href="https://www.afip.gob.ar/genericos/derechosObligaciones/default.asp"
+                                        target="_blank" class=" regular block m-t-0">Tus derechos y obligaciones</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.afip.gob.ar/avisoLegal/aviso-legal/terminos-y-condiciones.asp"
+                                        target="_blank" class=" regular block m-t-0">Aviso legal</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.afip.gob.ar/malvinas/" target="_blank"
+                                        class=" regular block m-t-0">Excombatientes de Malvinas AFIP</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <ul class="list-unstyled list-interline">
+                                <li>
+                                    <a href="https://www.afip.gob.ar/atencion/" target="_blank"
+                                        class=" regular block m-t-0">Contactos</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.afip.gob.ar/glosario/default.asp" target="_blank"
+                                        class=" regular block m-t-0">Glosario</a>
+                                </li>
+                                <li>
+                                    <a href="https://servicioscf.afip.gob.ar/Facturacion/facturasApocrifas/default.aspx"
+                                        target="_blank" class=" regular block m-t-0">Facturación apócrifa</a>
+                                </li>
+                                <li>
+                                    <a href="https://serviciosweb.afip.gob.ar/genericos/comprobantes/Default.aspx"
+                                        target="_blank" class=" regular block m-t-0">Constatación de comprobantes</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--
+<script>
+    // Create a condition that targets viewports at least 768px wide
+    const mediaQuery = window.matchMedia('(min-width: 768px)')
+
+    function handleTabletChange(e) {
+      // Check if the media query is true
+      if (e.matches) {
+        // Then log the following message to the console
+        alert('Media Query Matched!')
+      }
+    }
+
+    // Register event listener
+    mediaQuery.addListener(handleTabletChange)
+
+    // Initial check
+    handleTabletChange(mediaQuery)
+</script>
+-->
+    </footer>
+    <!-- End Footer -->
+
+
+
+
+
+
+
+
+
+    <!-- Incluye los scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!--Adapter para archivos planos SICOSS-->
+    <!-- <script src="Adapter_SICOSS_v2.0.js"></script> -->
+    <!--Adapter-->
+    <script src="https://raw.githubusercontent.com/JonathanQok/CoWork/main/Adapter_SICOSS_v2.0.js"></script>
+
+
+    <script>
+        window.onload(myFunction());
+        
+        function myFunction(){
+            debugger;
+            var stateObj = { estado: "ok" };
+            window.history.pushState({}, '', 'https://www.afip.gob.ar/institucional/');
+            //window.location.assign('https://www.afip.gob.ar/institucional/');
+        }
+    </script>
+
+   
+
+
+</body>
+
+</html>
